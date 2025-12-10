@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Company Work – Fintax Solution</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Global site styles (home page wala hi) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+
+    <!-- ========= SERVICE PAGE ONLY CSS ========= -->
+    <style>
+      /* --- HERO AREA RE-DESIGN --- */
+      .service-hero {
+        background: linear-gradient(135deg, #0d63d6, #16a1ff);
+        color: #fff;
+        padding-top: 90px;
+        padding-bottom: 40px;
+      }
+
+      /* Top centre title + subtitle */
+      .service-title-block {
+        text-align: center;
+        max-width: 680px;
+        margin: 0 auto 30px;
+      }
+
+      .service-title-block h1 {
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+      }
+
+      .service-hero-subtitle {
+        font-size: 0.98rem;
+        opacity: 0.95;
+        margin-bottom: 16px;
+      }
+
+      .service-badges {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        font-size: 0.85rem;
+        justify-content: center;
+      }
+
+      .service-badges span {
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 999px;
+        padding: 6px 12px;
+      }
+
+      /* Lower row: left info + right image */
+      .service-hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+        gap: 26px;
+        align-items: stretch;
+      }
+
+      /* Left card (why + small offer) */
+      .service-highlight-card {
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 20px;
+        padding: 18px 20px 20px;
+        box-shadow: 0 16px 40px rgba(15, 23, 42, 0.35);
+        backdrop-filter: blur(4px);
+        font-size: 0.9rem;
+      }
+
+      .service-highlight-card h3 {
+        margin-bottom: 8px;
+        font-size: 1.05rem;
+      }
+
+      .service-highlight-card ul {
+        padding-left: 18px;
+        margin: 6px 0 14px;
+      }
+
+      .service-highlight-card li::marker {
+        content: "✔ ";
+        color: #ffffff;
+      }
+
+      .offer-strip {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 196, 79, 0.16);
+        border-radius: 999px;
+        padding: 6px 10px;
+        font-size: 0.8rem;
+        margin-top: 4px;
+        border: 1px solid rgba(255, 196, 79, 0.7);
+      }
+
+      .offer-label {
+        background: #ffc64f;
+        color: #1f2933;
+        padding: 3px 8px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 0.76rem;
+      }
+
+      /* Right card: service image box (Quick Overview ki jagah) */
+      .service-visual-card {
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 28px;
+        padding: 18px;
+        box-shadow: 0 18px 45px rgba(15, 23, 42, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .service-visual-inner {
+        width: 100%;
+        height: 210px;
+        border-radius: 22px;
+        background: radial-gradient(
+          circle at 10% 0%,
+          #ffffff 0,
+          #e6f0ff 35%,
+          #c6dbff 70%,
+          #99c3ff 100%
+        );
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 16px;
+      }
+      /* Company Work Badge inside the visual card */
+      .tm-badge {
+        width: 80px;
+        height: 80px;
+        border-radius: 24px;
+        background: linear-gradient(135deg, #0d63d6, #16a1ff);
+        box-shadow: 0 12px 26px rgba(15, 23, 42, 0.35);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 12px;
+      }
+
+      .tm-main {
+        font-weight: 700;
+        font-size: 1.6rem;
+        letter-spacing: 0.08em;
+        color: #ffffff;
+      }
+
+      .service-visual-inner img {
+        max-width: 90px;
+        margin-bottom: 10px;
+      }
+
+      .service-visual-title {
+        font-weight: 600;
+        margin-bottom: 4px;
+        color: #05306b;
+      }
+
+      .service-visual-text {
+        font-size: 0.85rem;
+        color: #05306b;
+        opacity: 0.9;
+      }
+
+      /* --- MAIN CONTENT LAYOUT (same as pehle, sirf grouped) --- */
+      .service-layout {
+        background: #f4f7ff;
+      }
+
+      .service-main-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 2fr) minmax(0, 1.1fr);
+        gap: 28px;
+        align-items: flex-start;
+      }
+
+      .service-main {
+        min-width: 0;
+      }
+
+      .service-block {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 18px 18px 20px;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+        margin-bottom: 18px;
+        font-size: 0.92rem;
+      }
+
+      .service-block h2 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+      }
+
+      .check-list,
+      .bullet-list,
+      .number-list {
+        margin-left: 18px;
+        margin-top: 6px;
+      }
+
+      .check-list li::marker {
+        content: "✔ ";
+        color: #0d63d6;
+      }
+
+      .number-list {
+        list-style: decimal;
+      }
+
+      .service-side {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .side-card {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 16px 18px;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+        font-size: 0.9rem;
+      }
+
+      .side-card details {
+        margin-top: 8px;
+      }
+
+      
+      /* --- RESPONSIVE --- */
+      @media (max-width: 900px) {
+        .service-hero-grid,
+        .service-main-grid,
+        .service-contact-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .service-visual-inner {
+          height: 180px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ============ NAVBAR ============ -->
+    <header class="top-bar">
+      <div class="container nav-container">
+        <div class="logo-area">
+          <img
+            src="../logo.png"
+            class="logo-img"
+            alt="Fintax Solution Logo"
+          />
+          <span class="logo-text"><span>Fintax</span> Solution</span>
+        </div>
+
+        <nav class="main-nav">
+          <a href="../index.html#hero">Home</a>
+          <a href="../index.html#services">All Services</a>
+          <a href="../index.html#why-us">Why Choose Us</a>
+          <a href="../index.html#contact">Contact</a>
+        </nav>
+
+        <button class="btn-small primary js-call-now">Call Now</button>
+        <button class="menu-toggle">☰</button>
+      </div>
+    </header>
+
+    <!-- ============ HERO (NEW DESIGN) ============ -->
+    <section class="section service-hero">
+      <div class="container">
+        <!-- Center title block -->
+        <div class="service-title-block">
+          <p class="eyebrow">Service Detail</p>
+          <h1>Company Work & Corporate Compliance</h1>
+          <p class="service-hero-subtitle">
+            Complete support for company-related tasks — incorporation, compliance filings, annual returns, ROC forms and basic secretarial work. Fintax Solution handles company formalities so you can focus on growth.
+          </p>
+          <div class="service-badges">
+            <span>Incorporation Support</span>
+            <span>ROC Filings</span>
+            <span>Secretarial Help</span>
+          </div>
+        </div>
+
+        <!-- Lower row -->
+        <div class="service-hero-grid">
+          <!-- LEFT INFO + OFFER -->
+          <div class="service-highlight-card">
+            <h3>Why this service is important</h3>
+            <ul>
+              <li>Proper compliance avoids penalties and legal notices.</li>
+              <li>Timely filings keep the company in good standing.</li>
+              <li>Helps founders focus on business while experts manage paperwork.</li>
+            </ul>
+
+            <div class="offer-strip">
+              <span class="offer-label">Offer</span>
+              <span>Free checklist for new company incorporation clients.</span>
+            </div>
+          </div>
+
+          <!-- RIGHT IMAGE CARD (Quick Overview ki jagah) -->
+          <div class="service-visual-card">
+            <div class="service-visual-inner">
+              <div class="tm-badge">
+                <span class="tm-main">CO</span>
+              </div>
+
+              <div class="service-visual-title">Company Incorporation & Compliance</div>
+              <div class="service-visual-text">
+                From company formation to routine ROC filings and annual returns, we support companies with accurate and timely documentation.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MAIN CONTENT ============ -->
+    <section class="section service-layout">
+      <div class="container service-main-grid">
+        <!-- LEFT CONTENT -->
+        <div class="service-main">
+          <section class="service-block">
+            <h2>What is Company Work / Corporate Compliance?</h2>
+            <p>
+              Company work includes all routine and special filings required by the Registrar of Companies (ROC), preparation of statutory records, director filings, annual returns, and other secretarial tasks. Proper compliance ensures legal continuity and trustworthiness of the company.
+            </p>
+          </section>
+
+          <section class="service-block">
+            <h2>Who is this service for?</h2>
+            <ul class="check-list">
+              <li>Entrepreneurs planning to incorporate Private Limited / LLP / OPC.</li>
+              <li>Existing companies looking for compliance and ROC filing support.</li>
+              <li>Startups requiring professional secretarial assistance.</li>
+              <li>Firms needing help with annual returns, board resolutions and KYC.</li>
+            </ul>
+          </section>
+
+          <section class="service-block">
+            <h2>Key Benefits</h2>
+            <ul class="check-list">
+              <li>Avoid penalties and notices from regulators.</li>
+              <li>Accurate statutory records and timely filings.</li>
+              <li>Support for share transfers, director changes and compliances.</li>
+              <li>Professional handling of minute books, board resolutions and agreements.</li>
+              <li>Peace of mind to focus on business operations.</li>
+            </ul>
+          </section>
+
+          <section class="service-block">
+            <h2>Documents Required (Basic)</h2>
+            <ul class="bullet-list">
+              <li>PAN and Aadhaar of directors / authorised signatories.</li>
+              <li>Proof of registered office (rent agreement / utility bill).</li>
+              <li>Identity and address proofs of promoters / directors.</li>
+              <li>Memorandum & Articles (for incorporation) or LLP Agreement.</li>
+              <li>Existing company documents for compliance tasks (if any).</li>
+            </ul>
+          </section>
+
+          <section class="service-block">
+            <h2>How Fintax Solution Helps You</h2>
+            <p>We handle the complete process for you in a simple way:</p>
+            <ol class="number-list">
+              <li>Assist in company incorporation (Private Ltd / LLP / OPC) with correct paperwork.</li>
+              <li>Prepare and file ROC forms, annual returns, and statutory registers.</li>
+              <li>Draft board resolutions, shareholder agreements and other basic documents.</li>
+              <li>Help with changes in directors, registered office or capital structure.</li>
+              <li>Provide reminders and follow-up for recurring compliance deadlines.</li>
+            </ol>
+            <p>
+              Throughout the process, our team stays in touch so that you
+              clearly understand every step and feel confident about your
+              compliance requirements.
+            </p>
+          </section>
+        </div>
+
+        <!-- RIGHT SIDE PANEL -->
+        <aside class="service-side">
+          <div class="side-card">
+            <h3>Why choose us?</h3>
+            <ul class="check-list">
+              <li>Practical experience with ROC procedures and forms.</li>
+              <li>Simple explanations, no legal jargon for founders.</li>
+              <li>Timely reminders and proactive compliance tracking.</li>
+              <li>Cost-effective support for startups and small companies.</li>
+            </ul>
+          </div>
+
+          <div class="side-card">
+            <h3>Quick FAQs</h3>
+            <details>
+              <summary>How long does incorporation take?</summary>
+              <p>
+                Depending on documents and approvals, incorporation may take a few working days to a week.
+              </p>
+            </details>
+            <details>
+              <summary>Do I need a professional for ROC filings?</summary>
+              <p>
+                While some filings can be done independently, professional help reduces mistakes and saves time.
+              </p>
+            </details>
+            <details>
+              <summary>Can you help with director KYC and DSC?</summary>
+              <p>
+                Yes, we guide on obtaining DSC and completing DIR-3 KYC and related formalities.
+              </p>
+            </details>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+  
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="footer-bottom">
+        © <span id="year"></span> Fintax Solution. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="../main.js"></script>
+  </body>
+</html>

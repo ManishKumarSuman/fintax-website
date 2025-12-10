@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>PF Withdrawal – Fintax Solution</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Global site styles (home page wala hi) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+
+    <!-- ========= SERVICE PAGE ONLY CSS ========= -->
+    <style>
+      /* --- HERO AREA RE-DESIGN --- */
+      .service-hero {
+        background: linear-gradient(135deg, #0d63d6, #16a1ff);
+        color: #fff;
+        padding-top: 90px;
+        padding-bottom: 40px;
+      }
+
+      /* Top centre title + subtitle */
+      .service-title-block {
+        text-align: center;
+        max-width: 680px;
+        margin: 0 auto 30px;
+      }
+
+      .service-title-block h1 {
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+      }
+
+      .service-hero-subtitle {
+        font-size: 0.98rem;
+        opacity: 0.95;
+        margin-bottom: 16px;
+      }
+
+      .service-badges {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        font-size: 0.85rem;
+        justify-content: center;
+      }
+
+      .service-badges span {
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 999px;
+        padding: 6px 12px;
+      }
+
+      /* Lower row: left info + right image */
+      .service-hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+        gap: 26px;
+        align-items: stretch;
+      }
+
+      /* Left card (why + small offer) */
+      .service-highlight-card {
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 20px;
+        padding: 18px 20px 20px;
+        box-shadow: 0 16px 40px rgba(15, 23, 42, 0.35);
+        backdrop-filter: blur(4px);
+        font-size: 0.9rem;
+      }
+
+      .service-highlight-card h3 {
+        margin-bottom: 8px;
+        font-size: 1.05rem;
+      }
+
+      .service-highlight-card ul {
+        padding-left: 18px;
+        margin: 6px 0 14px;
+      }
+
+      .service-highlight-card li::marker {
+        content: "✔ ";
+        color: #ffffff;
+      }
+
+      .offer-strip {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 196, 79, 0.16);
+        border-radius: 999px;
+        padding: 6px 10px;
+        font-size: 0.8rem;
+        margin-top: 4px;
+        border: 1px solid rgba(255, 196, 79, 0.7);
+      }
+
+      .offer-label {
+        background: #ffc64f;
+        color: #1f2933;
+        padding: 3px 8px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 0.76rem;
+      }
+
+      /* Right card: service image box (Quick Overview ki jagah) */
+      .service-visual-card {
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 28px;
+        padding: 18px;
+        box-shadow: 0 18px 45px rgba(15, 23, 42, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .service-visual-inner {
+        width: 100%;
+        height: 210px;
+        border-radius: 22px;
+        background: radial-gradient(
+          circle at 10% 0%,
+          #ffffff 0,
+          #e6f0ff 35%,
+          #c6dbff 70%,
+          #99c3ff 100%
+        );
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 16px;
+      }
+      /* TM Badge inside the visual card */
+      .tm-badge {
+        width: 80px;
+        height: 80px;
+        border-radius: 24px;
+        background: linear-gradient(135deg, #0d63d6, #16a1ff);
+        box-shadow: 0 12px 26px rgba(15, 23, 42, 0.35);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 12px;
+      }
+
+      .tm-main {
+        font-weight: 700;
+        font-size: 1.6rem;
+        letter-spacing: 0.08em;
+        color: #ffffff;
+      }
+
+      .service-visual-inner img {
+        max-width: 90px;
+        margin-bottom: 10px;
+      }
+
+      .service-visual-title {
+        font-weight: 600;
+        margin-bottom: 4px;
+        color: #05306b;
+      }
+
+      .service-visual-text {
+        font-size: 0.85rem;
+        color: #05306b;
+        opacity: 0.9;
+      }
+
+      /* --- MAIN CONTENT LAYOUT (same as pehle, sirf grouped) --- */
+      .service-layout {
+        background: #f4f7ff;
+      }
+
+      .service-main-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 2fr) minmax(0, 1.1fr);
+        gap: 28px;
+        align-items: flex-start;
+      }
+
+      .service-main {
+        min-width: 0;
+      }
+
+      .service-block {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 18px 18px 20px;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+        margin-bottom: 18px;
+        font-size: 0.92rem;
+      }
+
+      .service-block h2 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+      }
+
+      .check-list,
+      .bullet-list,
+      .number-list {
+        margin-left: 18px;
+        margin-top: 6px;
+      }
+
+      .check-list li::marker {
+        content: "✔ ";
+        color: #0d63d6;
+      }
+
+      .number-list {
+        list-style: decimal;
+      }
+
+      .service-side {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .side-card {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 16px 18px;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+        font-size: 0.9rem;
+      }
+
+      .side-card details {
+        margin-top: 8px;
+      }
+
+
+      /* --- RESPONSIVE --- */
+      @media (max-width: 900px) {
+        .service-hero-grid,
+        .service-main-grid,
+        .service-contact-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .service-visual-inner {
+          height: 180px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ============ NAVBAR ============ -->
+    <header class="top-bar">
+      <div class="container nav-container">
+        <div class="logo-area">
+          <img
+            src="../logo.png"
+            class="logo-img"
+            alt="Fintax Solution Logo"
+          />
+          <span class="logo-text"><span>Fintax</span> Solution</span>
+        </div>
+
+        <nav class="main-nav">
+          <a href="../index.html#hero">Home</a>
+          <a href="../index.html#services">All Services</a>
+          <a href="../index.html#why-us">Why Choose Us</a>
+          <a href="../index.html#contact">Contact</a>
+        </nav>
+
+        <button class="btn-small primary js-call-now">Call Now</button>
+        <button class="menu-toggle">☰</button>
+      </div>
+    </header>
+
+    <!-- ============ HERO (NEW DESIGN) ============ -->
+    <section class="section service-hero">
+      <div class="container">
+        <!-- Center title block -->
+        <div class="service-title-block">
+          <p class="eyebrow">Service Detail</p>
+          <h1>PF Withdrawal</h1>
+          <p class="service-hero-subtitle">
+            PF withdrawal allows you to claim the provident fund balance that
+            you have earned during your employment. Fintax Solution helps you
+            complete the online process smoothly with correct details.
+          </p>
+          <div class="service-badges">
+            <span>EPF Support</span>
+            <span>Document Guidance</span>
+            <span>Hassle-free Processing</span>
+          </div>
+        </div>
+
+        <!-- Lower row -->
+        <div class="service-hero-grid">
+          <!-- LEFT INFO + OFFER -->
+          <div class="service-highlight-card">
+            <h3>Why this service is important</h3>
+            <ul>
+              <li>Helps you receive your PF amount into your bank account.</li>
+              <li>Avoids mistakes in forms and online portal.</li>
+              <li>Saves time in understanding complex EPF rules.</li>
+            </ul>
+
+            <div class="offer-strip">
+              <span class="offer-label">Offer</span>
+              <span
+                >Basic review of PF details before filing the claim, without
+                extra charges.</span
+              >
+            </div>
+          </div>
+
+          <!-- RIGHT IMAGE CARD (Quick Overview ki jagah) -->
+          <div class="service-visual-card">
+            <div class="service-visual-inner">
+              <div class="tm-badge">
+                <span class="tm-main">PF</span>
+              </div>
+
+              <div class="service-visual-title">EPF Claim Assistance</div>
+              <div class="service-visual-text">
+                Get guided support in submitting your PF withdrawal request
+                correctly and receiving funds without unnecessary delays.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MAIN CONTENT ============ -->
+    <section class="section service-layout">
+      <div class="container service-main-grid">
+        <!-- LEFT CONTENT -->
+        <div class="service-main">
+          <section class="service-block">
+            <h2>What is PF Withdrawal?</h2>
+            <p>
+              PF withdrawal is the process of claiming the accumulated balance
+              in your Employees’ Provident Fund account when you become
+              eligible, such as after leaving a job or under specific
+              conditions.
+            </p>
+            <p>
+              It can help startups access tax benefits, easier compliance,
+              networking opportunities and better visibility in government and
+              corporate programs.
+            </p>
+          </section>
+
+          <section class="service-block">
+            <h2>Who is this service for?</h2>
+            <ul class="check-list">
+              <li>
+                New companies and LLPs with innovative products or services.
+              </li>
+              <li>Early-stage founders planning to raise funding.</li>
+              <li>Startups working in technology or unique business models.</li>
+              <li>
+                Existing small businesses that recently started operations.
+              </li>
+            </ul>
+          </section>
+
+          <section class="service-block">
+            <h2>Key Benefits</h2>
+            <ul class="check-list">
+              <li>Official Startup recognition certificate.</li>
+              <li>
+                Access to selected tax and compliance benefits (as per rules).
+              </li>
+              <li>Better image in front of investors and partners.</li>
+              <li>Easier participation in Startup programmes and events.</li>
+              <li>Increased credibility for your business.</li>
+            </ul>
+          </section>
+
+          <section class="service-block">
+            <h2>Documents Required</h2>
+            <ul class="bullet-list">
+              <li>Incorporation certificate of the company/LLP.</li>
+              <li>PAN of the entity and founders.</li>
+              <li>
+                Brief pitch or write-up about the business and innovation.
+              </li>
+              <li>Website or product details (if any).</li>
+              <li>Other supporting documents as required by the portal.</li>
+            </ul>
+          </section>
+
+          <section class="service-block">
+            <h2>How Fintax Solution Helps You</h2>
+            <p>We handle the complete process for you in a simple way:</p>
+            <ol class="number-list">
+              <li>
+                Check whether your business fits the basic Startup eligibility
+                criteria.
+              </li>
+              <li>
+                Help you prepare a clear and simple pitch / write-up as
+                required.
+              </li>
+              <li>Collect and verify documents for founders and entity.</li>
+              <li>
+                Create and submit your Startup India application on the portal.
+              </li>
+              <li>Explain tax impact, if any, on PF withdrawal.</li>
+            </ol>
+            <p>
+              Throughout the process, our team stays in touch so that you
+              clearly understand every step and feel confident about your
+              application.
+            </p>
+          </section>
+        </div>
+
+        <!-- RIGHT SIDE PANEL -->
+        <aside class="service-side">
+          <div class="side-card">
+            <h3>Why choose us?</h3>
+            <ul class="check-list">
+              <li>Clear explanation of EPF rules in simple language.</li>
+              <li>
+                Practical help if you are not comfortable with online portals.
+              </li>
+              <li>Support available on phone and WhatsApp.</li>
+              <li>Respectful handling of sensitive financial information.</li>
+            </ul>
+          </div>
+
+          <div class="side-card">
+            <h3>Quick FAQs</h3>
+            <details>
+              <summary>Can I withdraw PF while still working?</summary>
+              <p>
+                Full withdrawal is normally allowed after leaving service. Partial withdrawals are possible in special situations, as per EPFO rules.
+              </p>
+            </details>
+            <details>
+              <summary>How long does PF withdrawal usually take?</summary>
+              <p>
+                After correct filing, it generally takes a few working weeks, depending on EPFO processing.
+              </p>
+            </details>
+            <details>
+              <summary>Is PAN mandatory for PF withdrawal?</summary>
+              <p>
+                Most of the process can be completed online through documents
+                and calls.PAN is strongly recommended. Non-availability may lead to higher TDS deduction in some cases.
+              </p>
+            </details>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+   
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="footer-bottom">
+        © <span id="year"></span> Fintax Solution. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="../main.js"></script>
+  </body>
+</html>
