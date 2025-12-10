@@ -108,9 +108,10 @@ a {
   height: 46px;
   display: block;
   object-fit: contain;
-  border-radius:20%;
+  border-radius:22%;
   box-shadow: 10px 4px 12px rgba(15, 23, 42, 0.2);
   cursor: pointer;
+  background-color: #e5e7eb;
 }
 
 .logo-img:hover {
@@ -240,6 +241,88 @@ a {
   background: #fff;
   color: var(--primary-dark);
   box-shadow: var(--shadow-soft);
+}
+/* WhatsApp hero button - matches existing btn style but with WhatsApp green */
+.btn-whatsapp {
+  background: linear-gradient(90deg,#25D366,#16B84A); /* whatsapp-like green */
+  color: #fff;
+  border-radius: 999px;     /* keep pill shape */
+  padding: 10px 18px;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(37,211,102,0.12);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+/* Keep hover subtle */
+.btn-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px rgba(37,211,102,0.16);
+}
+
+/* Floating WhatsApp button (fixed on bottom-left) */
+#floating-whatsapp {
+  position: fixed;
+  left: 22px;                 /* adjust distance from left edge */
+  bottom: 22px;               /* distance from bottom edge */
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(180deg,#25D366,#16B84A);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+  z-index: 9999;
+  box-shadow: 0 16px 40px rgba(8,40,24,0.28);
+  transition: transform .18s ease, box-shadow .18s ease;
+  will-change: transform;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+/* small inner light (active pulse) */
+#floating-whatsapp::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 50%;
+  transform: translate(-50%,-50%);
+  box-shadow: 0 0 18px rgba(255,255,255,0.12), 0 0 32px rgba(37,211,102,0.18);
+  opacity: 0.95;
+}
+
+/* soft pulse ring */
+#floating-whatsapp::before{
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  transform: translate(-50%,-50%);
+  background: radial-gradient(circle, rgba(37,211,102,0.08) 0%, rgba(37,211,102,0.02) 30%, transparent 60%);
+  pointer-events: none;
+}
+
+/* hover effect */
+#floating-whatsapp:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 50px rgba(8,40,24,0.32);
+}
+
+/* small screen adjustments */
+@media (max-width:600px){
+  #floating-whatsapp { left: 14px; bottom: 14px; width:52px; height:52px;}
+  .btn-whatsapp { padding:9px 14px; }
 }
 
 .ghost {
@@ -507,6 +590,110 @@ a {
   padding: 12px 0 16px;
   font-size: 0.8rem;
 }
+
+
+/* ===== Enhanced WhatsApp pill (premium look) ===== */
+.whatsapp-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 34px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  border-radius: 999px;
+  text-decoration: none;
+  position: fixed;
+  left: 18px;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 20px);
+  z-index: 99999;
+  white-space: nowrap;
+  cursor: pointer;
+
+  /* layered background for a richer green */
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255,255,255,0.08), transparent 18%),
+    linear-gradient(180deg, #3cd86a 0%, #25D366 45%, #16b84a 100%);
+
+  /* soft multi-layer shadow for "floating" look */
+  box-shadow:
+    0 8px 18px rgba(29,130,76,0.14),
+    0 18px 38px rgba(8,66,40,0.12),
+    inset 0 -3px 8px rgba(0,0,0,0.06);
+  transition: transform .20s cubic-bezier(.2,.9,.3,1), box-shadow .18s ease, bottom .18s ease;
+  transform-origin: center;
+  will-change: transform, box-shadow;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* gentle floating (y-axis bob) animation */
+@keyframes wa-bob {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
+}
+.whatsapp-pill {
+  animation: wa-bob 4.5s ease-in-out infinite;
+}
+
+/* hover & focus: lift + brighter shadow */
+.whatsapp-pill:hover,
+.whatsapp-pill:focus {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow:
+    0 20px 46px rgba(29,130,76,0.22),
+    0 36px 80px rgba(8,66,40,0.18),
+    inset 0 -4px 12px rgba(0,0,0,0.08);
+  outline: none;
+}
+
+/* focus visible for keyboard users */
+.whatsapp-pill:focus-visible {
+  box-shadow:
+    0 20px 46px rgba(29,130,76,0.20),
+    0 0 0 6px rgba(37,211,102,0.12);
+  transform: translateY(-6px) scale(1.01);
+}
+
+/* subtle glass halo behind the button (pseudo-element) */
+.whatsapp-pill::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 160%;
+  height: 160%;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(37,211,102,0.06) 0%, rgba(37,211,102,0.02) 35%, transparent 60%);
+  filter: blur(10px);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.95;
+}
+
+/* small inner highlight on left (subtle) */
+.whatsapp-pill::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  top: 18%;
+  width: 14px;
+  height: 8px;
+  border-radius: 6px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.3));
+  filter: blur(.2px);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+/* responsive tweak */
+@media (max-width:480px){
+  .whatsapp-pill { left: 12px; bottom: calc(env(safe-area-inset-bottom, 0px) + 14px); padding:10px 22px; font-size:15px; }
+  .whatsapp-pill::before { width:200%; height:200%; filter: blur(8px); }
+}
+
 
 /* ========= RESPONSIVE ========= */
 
