@@ -253,6 +253,320 @@
       }
     </style>
   </head>
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Startup India Registration – Fintax Solution</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Global site styles (home page wala hi) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+
+    <!-- ========= SERVICE PAGE ONLY CSS ========= -->
+    <style>
+      /* --- HERO AREA RE-DESIGN --- */
+      .service-hero {
+        background: linear-gradient(135deg, #0d63d6, #16a1ff);
+        color: #fff;
+        padding-top: 90px;
+        padding-bottom: 40px;
+      }
+
+      /* Top centre title + subtitle */
+      .service-title-block {
+        text-align: center;
+        max-width: 680px;
+        margin: 0 auto 30px;
+      }
+
+      .service-title-block h1 {
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+      }
+
+      .service-hero-subtitle {
+        font-size: 0.98rem;
+        opacity: 0.95;
+        margin-bottom: 16px;
+      }
+
+      .service-badges {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        font-size: 0.85rem;
+        justify-content: center;
+      }
+
+      .service-badges span {
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 999px;
+        padding: 6px 12px;
+      }
+
+      /* Lower row: left info + right image */
+      .service-hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+        gap: 26px;
+        align-items: stretch;
+      }
+
+      /* Left card (why + small offer) */
+      .service-highlight-card {
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 20px;
+        padding: 18px 20px 20px;
+        box-shadow: 0 16px 40px rgba(15, 23, 42, 0.35);
+        backdrop-filter: blur(4px);
+        font-size: 0.9rem;
+      }
+
+      .service-highlight-card h3 {
+        margin-bottom: 8px;
+        font-size: 1.05rem;
+      }
+
+      .service-highlight-card ul {
+        padding-left: 18px;
+        margin: 6px 0 14px;
+      }
+
+      .service-highlight-card li::marker {
+        content: "✔ ";
+        color: #ffffff;
+      }
+
+      .offer-strip {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 196, 79, 0.16);
+        border-radius: 999px;
+        padding: 6px 10px;
+        font-size: 0.8rem;
+        margin-top: 4px;
+        border: 1px solid rgba(255, 196, 79, 0.7);
+      }
+
+      .offer-label {
+        background: #ffc64f;
+        color: #1f2933;
+        padding: 3px 8px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 0.76rem;
+      }
+
+      /* Right card: service image box (Quick Overview ki jagah) */
+      .service-visual-card {
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 28px;
+        padding: 18px;
+        box-shadow: 0 18px 45px rgba(15, 23, 42, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .service-visual-inner {
+        width: 100%;
+        height: 210px;
+        border-radius: 22px;
+        background: radial-gradient(
+          circle at 10% 0%,
+          #ffffff 0,
+          #e6f0ff 35%,
+          #c6dbff 70%,
+          #99c3ff 100%
+        );
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 16px;
+      }
+      /* Startup India Badge inside the visual card */
+      .tm-badge {
+        width: 80px;
+        height: 80px;
+        border-radius: 24px;
+        background: linear-gradient(135deg, #0d63d6, #16a1ff);
+        box-shadow: 0 12px 26px rgba(15, 23, 42, 0.35);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 12px;
+      }
+
+      .tm-main {
+        font-weight: 700;
+        font-size: 1.6rem;
+        letter-spacing: 0.08em;
+        color: #ffffff;
+      }
+
+      .service-visual-inner img {
+        max-width: 90px;
+        margin-bottom: 10px;
+      }
+
+      .service-visual-title {
+        font-weight: 600;
+        margin-bottom: 4px;
+        color: #05306b;
+      }
+
+      .service-visual-text {
+        font-size: 0.85rem;
+        color: #05306b;
+        opacity: 0.9;
+      }
+
+      /* --- MAIN CONTENT LAYOUT (same as pehle, sirf grouped) --- */
+      .service-layout {
+        background: #f4f7ff;
+      }
+
+      .service-main-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 2fr) minmax(0, 1.1fr);
+        gap: 28px;
+        align-items: flex-start;
+      }
+
+      .service-main {
+        min-width: 0;
+      }
+
+      .service-block {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 18px 18px 20px;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+        margin-bottom: 18px;
+        font-size: 0.92rem;
+      }
+
+      .service-block h2 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+      }
+
+      .check-list,
+      .bullet-list,
+      .number-list {
+        margin-left: 18px;
+        margin-top: 6px;
+      }
+
+      .check-list li::marker {
+        content: "✔ ";
+        color: #0d63d6;
+      }
+
+      .number-list {
+        list-style: decimal;
+      }
+
+      .service-side {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .side-card {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 16px 18px;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+        font-size: 0.9rem;
+      }
+
+      .side-card details {
+        margin-top: 8px;
+      }
+
+      /* --- CONTACT BLOCK --- */
+      .service-contact {
+        background: #ffffff;
+      }
+
+      .service-contact-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.2fr);
+        gap: 32px;
+        align-items: flex-start;
+      }
+
+      .contact-form {
+        background: #f4f7ff;
+        border-radius: 12px;
+        padding: 18px 18px 20px;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+        font-size: 0.9rem;
+      }
+
+      .form-row {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        margin-bottom: 12px;
+      }
+
+      .form-row label {
+        font-size: 0.85rem;
+        font-weight: 500;
+      }
+
+      .form-row input,
+      .form-row select,
+      .form-row textarea {
+        padding: 8px 10px;
+        border-radius: 8px;
+        border: 1px solid #d4ddf2;
+        font-family: inherit;
+        font-size: 0.9rem;
+        outline: none;
+      }
+
+      .form-row input:focus,
+      .form-row select:focus,
+      .form-row textarea:focus {
+        border-color: #0d63d6;
+      }
+
+      .form-submit {
+        width: 100%;
+        margin-top: 4px;
+      }
+
+      .form-note {
+        font-size: 0.78rem;
+        color: #6b7280;
+        margin-top: 8px;
+      }
+
+      /* --- RESPONSIVE --- */
+      @media (max-width: 900px) {
+        .service-hero-grid,
+        .service-main-grid,
+        .service-contact-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .service-visual-inner {
+          height: 180px;
+        }
+      }
+    </style>
+  </head>
   <body>
     <!-- ============ NAVBAR ============ -->
     <header class="top-bar">
@@ -286,11 +600,7 @@
           <p class="eyebrow">Service Detail</p>
           <h1>Startup India Registration</h1>
           <p class="service-hero-subtitle">
-            Startup India registration provides official recognition under the
-            Government of India’s Startup ecosystem and helps innovative
-            businesses access various benefits, visibility and business
-            opportunities. Fintax Solution guides you through correct
-            documentation and smooth application processing.
+            Startup India registration provides official recognition under the Government of India's Startup ecosystem and helps innovative businesses access various benefits, visibility and business opportunities. Fintax Solution guides you through correct documentation and smooth application processing.
           </p>
           <div class="service-badges">
             <span>Government Recognition</span>
@@ -306,9 +616,7 @@
             <h3>Why this service is important</h3>
             <ul>
               <li>Gives official Startup recognition from DPIIT.</li>
-              <li>
-                Helps in accessing tax incentives and scheme-based support.
-              </li>
+              <li>Helps in accessing tax incentives and scheme-based support.</li>
               <li>Builds credibility with investors, clients and partners.</li>
             </ul>
 
@@ -325,12 +633,9 @@
                 <span class="tm-main">SU</span>
               </div>
 
-              <div class="service-visual-title">
-                Startup Recognition Support
-              </div>
+              <div class="service-visual-title">Startup Recognition Support</div>
               <div class="service-visual-text">
-                Get your business recognised as a Startup and increase trust
-                with customers, investors and government programs.
+                Get your business recognised as a Startup and increase trust with customers, investors and government programs.
               </div>
             </div>
           </div>
@@ -344,18 +649,12 @@
         <!-- LEFT CONTENT -->
         <div class="service-main">
           <section class="service-block">
-            <h2>What is Trademark Registration?</h2>
+            <h2>What is Startup India Registration?</h2>
             <p>
-              Startup India registration is an online process under the
-              Department for Promotion of Industry and Internal Trade (DPIIT)
-              for recognising innovative businesses. This recognition supports
-              growth, provides access to startup-specific benefits and improves
-              credibility for networking and investments.
+              Startup India registration is an online process under the Department for Promotion of Industry and Internal Trade (DPIIT) for recognising innovative businesses. This recognition supports growth, provides access to startup-specific benefits and improves credibility for networking and investments.
             </p>
             <p>
-              With an approved Startup India recognition, businesses get
-              stronger market visibility and better acceptance from customers,
-              corporates and government bodies.
+              With an approved Startup India recognition, businesses get stronger market visibility and better acceptance from customers, corporates and government bodies.
             </p>
           </section>
 
@@ -365,7 +664,7 @@
               <li>Early-stage startups developing innovative solutions.</li>
               <li>New companies or LLPs less than 10 years old.</li>
               <li>Founders planning funding or accelerator programs.</li>
-              <li>Businesses needing government recognition for credibilit.</li>
+              <li>Businesses needing government recognition for credibility.</li>
             </ul>
           </section>
 
@@ -373,7 +672,7 @@
             <h2>Key Benefits</h2>
             <ul class="check-list">
               <li>Official Startup Recognition Certificate.</li>
-              <li>Better acceptance for funding and partnerships .</li>
+              <li>Better acceptance for funding and partnerships.</li>
               <li>Priority in govt. programs and innovation support.</li>
               <li>Higher trust with customers and corporates.</li>
               <li>Improved brand credibility.</li>
@@ -383,7 +682,7 @@
           <section class="service-block">
             <h2>Documents Required (Basic)</h2>
             <ul class="bullet-list">
-              <li>Founders’ Aadhaar + PAN.</li>
+              <li>Founders' Aadhaar + PAN.</li>
               <li>Incorporation certificate of Company/LLP.</li>
               <li>Brief pitch / business write-up.</li>
               <li>Website or product details (if any).</li>
@@ -395,16 +694,11 @@
             <h2>How Fintax Solution Helps You</h2>
             <p>We handle the complete process for you in a simple way:</p>
             <ol class="number-list">
-              <li>
-                Check Startup eligibility criteria based on age, turnover and
-                innovation.
-              </li>
+              <li>Check Startup eligibility criteria based on age, turnover and innovation.</li>
               <li>Help you prepare the pitch/write-up required by DPIIT.</li>
               <li>Verify documents and ensure correctness.</li>
               <li>Fill and submit your Startup application on the portal.</li>
-              <li>
-                Provide support if any clarification or document request comes.
-              </li>
+              <li>Provide support if any clarification or document request comes.</li>
             </ol>
             <p>
               Throughout the process, our team stays in touch so that you
@@ -429,26 +723,21 @@
           <div class="side-card">
             <h3>Quick FAQs</h3>
             <details>
-              <summary>
-                Is Startup India recognition mandatory for all startups?
-              </summary>
+              <summary>Is Startup India recognition mandatory for all startups?</summary>
               <p>
-                No, but it helps significantly in credibility, programs, and
-                opportunities.
+                No, but it helps significantly in credibility, programs, and opportunities.
               </p>
             </details>
             <details>
               <summary>Will I get tax exemption automatically?</summary>
               <p>
-                No. Tax exemption (80-IAC) is a separate approval based on
-                eligibility.
+                No. Tax exemption (80-IAC) is a separate approval based on eligibility.
               </p>
             </details>
             <details>
               <summary>Can a sole proprietorship apply?</summary>
               <p>
-                No, Startup India recognition is for Company, LLP or Registered
-                Partnership.
+                No, Startup India recognition is for Company, LLP or Registered Partnership.
               </p>
             </details>
           </div>
@@ -456,8 +745,7 @@
       </div>
     </section>
 
-  
-
+   
     <!-- ============ FOOTER ============ -->
     <footer class="footer">
       <div class="footer-bottom">

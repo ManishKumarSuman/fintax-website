@@ -137,7 +137,7 @@
         text-align: center;
         padding: 16px;
       }
-      /* TM Badge inside the visual card */
+      /* TD Badge inside the visual card */
       .tm-badge {
         width: 80px;
         height: 80px;
@@ -238,6 +238,65 @@
         margin-top: 8px;
       }
 
+      /* --- CONTACT BLOCK --- */
+      .service-contact {
+        background: #ffffff;
+      }
+
+      .service-contact-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.2fr);
+        gap: 32px;
+        align-items: flex-start;
+      }
+
+      .contact-form {
+        background: #f4f7ff;
+        border-radius: 12px;
+        padding: 18px 18px 20px;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+        font-size: 0.9rem;
+      }
+
+      .form-row {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        margin-bottom: 12px;
+      }
+
+      .form-row label {
+        font-size: 0.85rem;
+        font-weight: 500;
+      }
+
+      .form-row input,
+      .form-row select,
+      .form-row textarea {
+        padding: 8px 10px;
+        border-radius: 8px;
+        border: 1px solid #d4ddf2;
+        font-family: inherit;
+        font-size: 0.9rem;
+        outline: none;
+      }
+
+      .form-row input:focus,
+      .form-row select:focus,
+      .form-row textarea:focus {
+        border-color: #0d63d6;
+      }
+
+      .form-submit {
+        width: 100%;
+        margin-top: 4px;
+      }
+
+      .form-note {
+        font-size: 0.78rem;
+        color: #6b7280;
+        margin-top: 8px;
+      }
 
       /* --- RESPONSIVE --- */
       @media (max-width: 900px) {
@@ -308,8 +367,7 @@
 
             <div class="offer-strip">
               <span class="offer-label">Offer</span>
-              <span>Complimentary review of previous TDS/TCS filings for new clients.
-</span>
+              <span>Complimentary review of previous TDS/TCS filings for new clients.</span>
             </div>
           </div>
 
@@ -322,8 +380,7 @@
 
               <div class="service-visual-title">TDS &amp; TCS Compliance</div>
               <div class="service-visual-text">
-                Stay compliant with quarterly TDS &amp; TCS returns and keep your
-business free from avoidable tax notices.
+                Stay compliant with quarterly TDS &amp; TCS returns and keep your business free from avoidable tax notices.
               </div>
             </div>
           </div>
@@ -337,7 +394,7 @@ business free from avoidable tax notices.
         <!-- LEFT CONTENT -->
         <div class="service-main">
           <section class="service-block">
-            <h2>What is Trademark Registration?</h2>
+            <h2>What is TDS & TCS Return Filing?</h2>
             <p>
               TDS (Tax Deducted at Source) and TCS (Tax Collected at Source) returns are quarterly statements filed with the Income Tax Department to report tax deducted or collected from payments made to parties.
             </p>
@@ -350,9 +407,7 @@ business free from avoidable tax notices.
             <h2>Who is this service for?</h2>
             <ul class="check-list">
               <li>Businesses deducting TDS or collecting TCS on payments.</li>
-              <li>
-                EContractors and agencies making regular payments to vendors.
-              </li>
+              <li>Contractors and agencies making regular payments to vendors.</li>
               <li>Companies with salary, interest, rent, professional payments etc.</li>
               <li>Any person responsible for deducting or collecting tax at source.</li>
             </ul>
@@ -364,7 +419,7 @@ business free from avoidable tax notices.
               <li>Avoid late filing fees and interest.</li>
               <li>Correct reflection of TDS/TCS in Form 26AS of parties.</li>
               <li>Reduced risk of default and departmental notices.</li>
-              <li> Proper matching of books with government records.</li>
+              <li>Proper matching of books with government records.</li>
               <li>Professional support during reconciliation.</li>
             </ul>
           </section>
@@ -375,9 +430,7 @@ business free from avoidable tax notices.
               <li>TAN and PAN details of the deductor.</li>
               <li>Details of challans and payments made.</li>
               <li>Party-wise TDS/TCS data with PAN and amounts.</li>
-              <li>
-                Salary sheets, ledgers or summary reports from books.
-              </li>
+              <li>Salary sheets, ledgers or summary reports from books.</li>
               <li>Login credentials for TDS/TCS portal (if already created).</li>
             </ul>
           </section>
@@ -394,8 +447,7 @@ business free from avoidable tax notices.
             </ol>
             <p>
               Throughout the process, our team stays in touch so that you
-              clearly understand every step and feel confident about your
-              application.
+              clearly understand every step and feel confident about your compliance.
             </p>
           </section>
         </div>
@@ -405,7 +457,7 @@ business free from avoidable tax notices.
           <div class="side-card">
             <h3>Why choose us?</h3>
             <ul class="check-list">
-              <li>EClear guidance on applicable TDS/TCS sections.</li>
+              <li>Clear guidance on applicable TDS/TCS sections.</li>
               <li>Proper validation before filing to avoid errors.</li>
               <li>Support in correcting previous wrong filings.</li>
               <li>Regular reminders for due dates.</li>
@@ -418,7 +470,6 @@ business free from avoidable tax notices.
               <summary>What happens if TDS return is not filed on time?</summary>
               <p>
                 Late filing attracts fees and interest, and may lead to defaults in department records.
-
               </p>
             </details>
             <details>
@@ -438,9 +489,7 @@ business free from avoidable tax notices.
       </div>
     </section>
 
-   
-
-    <!-- ============ FOOTER ============ -->
+       <!-- ============ FOOTER ============ -->
     <footer class="footer">
       <div class="footer-bottom">
         © <span id="year"></span> Fintax Solution. All rights reserved.
